@@ -272,11 +272,7 @@ def main():
     start_time = time.time()
     
     # reddit client
-    reddit = praw.Reddit(user_agent="Comment Extraction",
-                         client_id="",
-                         client_secret="",
-                         username="",
-                         password="")
+    reddit = praw.Reddit("reddit_bot", user_agent="Scrape Ticker")
 
     posts, c_analyzed, tickers, titles, a_comments, picks, subs, picks_ayz = data_extractor(reddit)
     symbols, times, top = print_helper(tickers, picks, c_analyzed, posts, subs, titles, time, start_time)
